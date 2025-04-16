@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Prajwal Borewells</title>
+  
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Font Awesome Icons (for phone & WhatsApp icons) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-..."
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <style>
+    /* Global Resets and Body */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background-color: #f8f8f8;
+      color: #333;
+    }
+
+    /* Header */
+    header {
+      background: #b22222; /* dark red */
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    header h1 {
+      font-size: 28px;
+      margin: 5px 0;
+    }
+
+    /* Navigation */
+    nav {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin: 0 10px;
+    }
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: gold;
+    }
+
+    /* Contact Info in Header */
+    .contact-info {
+      display: flex;
+      align-items: center;
+      margin-left: 10px;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .contact-info a {
+      text-decoration: none;
+      color: white;
+      background-color: rgba(255, 255, 255, 0.15);
+      border: 1px solid transparent;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-size: 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background-color 0.3s;
+    }
+    .contact-info a:hover {
+      background-color: rgba(255, 255, 255, 0.3);
+    }
+
+    /* Hero Video */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh; /* Full viewport height */
+      margin: 0 auto;
+      border-radius: 0;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    }
+    .hero video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero p {
+      position: absolute;
+      bottom: 10%;
+      left: 10%;
+      background-color: rgb(238, 125, 113);
+      border-radius: 14px 12px 10px 40px;
+      color: white;
+      font-size: 24px;
+      font-weight: 600;
+      padding: 15px 30px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1000px;
+      margin: 20px auto;
+      padding: 15px;
+      text-align: center;
+    }
+    .container h2 {
+      color: #b22222;
+      font-size: 26px;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+    .container p {
+      font-size: 18px;
+      line-height: 1.8;
+      margin-bottom: 30px;
+    }
+
+    /* Contact Section */
+    .contact {
+      background-image: url("bore2.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      padding: 50px;
+      text-align: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    .contact::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.4);
+      z-index: 0;
+    }
+    .contact h2 {
+      position: relative;
+      z-index: 1;
+      font-size: 28px;
+      margin-bottom: 20px;
+      text-decoration: underline;
+      color: #fff;
+      font-weight: 600;
+    }
+    .contact .info-box {
+      position: relative;
+      z-index: 1;
+      background-color: rgba(46, 45, 45, 0.6);
+      border-radius: 12px;
+      display: inline-block;
+      padding: 20px;
+      margin-top: 10px;
+    }
+    .contact .info-box h1 {
+      margin-bottom: 10px;
+      color: #fff;
+      font-size: 24px;
+      text-decoration: underline;
+    }
+    .contact .info-box h1::first-letter {
+      background-color: aliceblue;
+      color: rgb(18, 34, 35);
+      padding: 0 2px;
+      border-radius: 2px;
+    }
+    .contact .info-box p {
+      margin: 6px 0;
+      font-size: 16px;
+    }
+    .contact .info-box a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    /* Floating Buttons (bottom-right) */
+    .phone-button,
+    .whatsapp-button {
+      position: fixed;
+      right: 15px;
+      color: white;
+      padding: 12px 25px;
+      font-size: 20px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 50px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 99;
+    }
+    .phone-button {
+      bottom: 80px;
+      background: #b22222; /* Red color to match brand */
+    }
+    .phone-button:hover {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+    .whatsapp-button {
+      bottom: 15px;
+      background: #25D366; /* WhatsApp green */
+    }
+    .whatsapp-button:hover {
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      background: #8B0000;
+      color: white;
+      padding: 15px;
+      font-size: 14px;
+    }
+
+    /* Responsive Media Queries */
+    @media (max-width: 768px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      header h1 {
+        margin-bottom: 10px;
+      }
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav ul li {
+        margin: 5px 0;
+      }
+      .hero {
+        height: 300px;
+      }
+      .hero p {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+      .container {
+        width: 90%;
+        margin: 10px auto;
+      }
+      .contact {
+        padding: 20px;
+      }
+      .contact h2 {
+        font-size: 20px;
+      }
+      .contact .info-box {
+        width: 100%;
+        box-sizing: border-box;
+      }
+      .phone-button,
+      .whatsapp-button {
+        font-size: 18px;
+        padding: 10px 18px;
+      }
+      .phone-button {
+        bottom: 75px;
+      }
+      .whatsapp-button {
+        bottom: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>Prajwal Borewells</h1>
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="contact-info">
+        <a href="tel:+9449552088"><i class="fas fa-phone"></i> 9449552088</a>
+        <a href="https://wa.me/+918867090418" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Hero Video Section -->
+  <div class="hero">
+    <video autoplay loop muted>
+      <source src="/prajwal.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <p>The Quality and Trust You Can Rely On Since 2003</p>
+  </div>
+
+  <!-- Services Container -->
+  <div class="container" id="services">
+    <h2>What is a Borewell?</h2>
+    <p>A borewell is a deep, narrow hole drilled into the ground to access underground water resources, commonly used in rural, agricultural, and urban areas.</p>
+  </div>
+
+  <!-- About Container -->
+  <div class="container" id="about">
+    <h2>ಬೋರ್ ವೆಲ್ ಬಗ್ಗೆ</h2>
+    <p>ಬೋರ್ ವೆಲ್ ಎಂದರೆ ಜಮೀನಿನಲ್ಲಿ ಬೇರೆ ಬೇರೆ ನೀರಿನ ಮೂಲಗಳನ್ನು ಸೇರಿಸಲು ಕೊಚ್ಚಿದ ಗುಂಡಿಯಾಗಿದೆ.</p>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <div class="info-box">
+      <h1>Prajwal Borewells</h1>
+      <p>Olagodu, Jennigadde (P), Chikkamagaluru (D&T), 577136</p>
+      <p>
+        WhatsApp:
+        <a href="https://wa.me/8867090418" target="_blank">8867090418</a>
+      </p>
+      <p>
+        Phone:
+        <a href="tel:+9449552088">9449552088</a>, 
+        <a href="tel:+8762884133">8762884133</a>
+      </p>
+    </div>
+  </div>
+
+  <!-- Floating Phone Button (above WhatsApp) -->
+  <a href="tel:+9449552088" class="phone-button">
+    <i class="fas fa-phone"></i> Call Us
+  </a>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/+919449552088" target="_blank" class="whatsapp-button">
+    <i class="fab fa-whatsapp"></i> WhatsApp
+  </a>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Prajwal Borewells. All rights reserved.</p>
+  </footer>
+</body>
+</html>
